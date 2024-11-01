@@ -1,6 +1,15 @@
 import request from '@/utils/request'
 import { parseStrEmpty } from "@/utils/ruoyi";
 
+
+// //显示表格
+// export function getSJ10(id){
+// 	return request({
+// 		url:'getDetail'  ,
+// 		method:'post',
+// 		data:data
+// 	})
+// }
 // 查询Sj10数据列表
 export function getSj10s(query) {
   return request({
@@ -42,6 +51,13 @@ export function deleteSj10(id) {
     url: '/deleteSj10/' + id,
     method: 'delete'
   })
+}
+
+export function exportExcel(data){
+	return request({
+		url:'/exoprt',
+		method:'post',
+	})
 }
 
 // Sj10数据头像上传

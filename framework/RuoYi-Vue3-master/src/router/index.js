@@ -82,6 +82,11 @@ export const constantRoutes = [
 	    path: '/sj10',
 	    component: () => import('@/views/datasystem/sj10/index'),
 	    hidden: true,
+	  },
+	  {
+	    path: '/detail',
+	    component: () => import('@/views/datasystem/sj10/detail'),
+	    hidden: true,
 	  }
     ]
   },

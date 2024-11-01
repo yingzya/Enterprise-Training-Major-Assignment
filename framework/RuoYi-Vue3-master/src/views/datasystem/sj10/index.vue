@@ -31,13 +31,24 @@
 						<el-button type="info" plain icon="Upload" @click="handleImport"
 							v-hasPermi="['system:user:import']">导入</el-button>
 					</el-col>
+					
 					<el-col :span="1.5">
 						<el-button type="warning" plain icon="Download" @click="handleExport"
 							v-hasPermi="['system:user:export']">导出</el-button>
 					</el-col>
+
+					<el-col :span="1.5">
+						<el-button type="primary" plain icon="Edit" @click="Detail"
+							v-hasPermi="['Details']">查看详情</el-button>
+					</el-col>
+					
 					<right-toolbar v-model:showSearch="showSearch" @queryTable="getList"
 						:columns="columns"></right-toolbar>
 				</el-row>
+
+				<!-- <el-form-item>
+					<el-button type="primary" icon="Edit" @click="handleUpdate(scope.row)" >查看详情</el-button>
+				</el-form-item> -->
 
 				<el-table v-loading="loading" :data="userList" @selection-change="handleSelectionChange">
 					<el-table-column type="selection" width="50" align="center" />
@@ -75,6 +86,11 @@
 									v-hasPermi="['system:user:remove']"></el-button>
 							</el-tooltip>
 
+							<el-tooltip content="查看详情" placement="top">
+								<el-button link type="primary" icon="Edit" @click="Detail(scope.row)"
+									v-hasPermi="['Details']"></el-button>
+							</el-tooltip>
+
 						</template>
 					</el-table-column>
 				</el-table>
@@ -84,8 +100,8 @@
 		</el-row>
 
 		<!-- 添加或修改Sj10数据配置对话框 -->
-		<el-dialog :title="title" v-model="open" width="600px" append-to-body>
-			<el-form :model="form" :rules="rules" ref="userRef" label-width="80px">
+		<el-dialog :title="title" v-model="open" width="1000px" append-to-body>
+			<el-form :model="form" :rules="rules" ref="userRef" label-width="170px">
 				<el-row>
 					<el-col :span="12">
 						<el-form-item label="施工单位" prop="sgdw">
@@ -410,7 +426,7 @@
 	/** 删除按钮操作 */
 	function handleDelete(row) {
 		const sj10Ids = row.id || ids.value;
-		proxy.$modal.confirm('是否确认删除Sj10数据编号为"' + sj10Ids + '"的数据项？').then(function() {
+		proxy.$modal.confirm('是否确认删除三维网客土喷播草种现场检查记录表编号为"' + sj10Ids + '"的数据项？').then(function() {
 			return deleteSj10(sj10Ids);
 		}).then(() => {
 			getList();
@@ -420,10 +436,11 @@
 
 	/** 导出按钮操作 */
 	function handleExport() {
-		proxy.download("system/user/export", {
+		proxy.download("exportExcel", {
 			...queryParams.value,
 		}, `user_${new Date().getTime()}.xlsx`);
 	};
+
 
 	/** 更多操作 */
 	function handleCommand(command, row) {
@@ -448,7 +465,7 @@
 
 	/** 导入按钮操作 */
 	function handleImport() {
-		upload.title = "Sj10数据导入";
+		upload.title = "三维网客土喷播草种现场检查记录表导入";
 		upload.open = true;
 	};
 
@@ -460,6 +477,17 @@
 	/**文件上传中处理 */
 	const handleFileUploadProgress = (event, file, fileList) => {
 		upload.isUploading = true;
+	};
+
+	const Detail = (row) => {
+		console.log(row)
+		console.log(row.id)
+		router.push({
+			path: "/detail",
+			query: {
+				id: row.id
+			}
+		})
 	};
 
 	/** 文件上传成功处理 */
@@ -500,7 +528,7 @@
 	/** 新增按钮操作 */
 	function handleAdd() {
 		open.value = true;
-		title.value = "添加Sj10数据";
+		title.value = "添加三维网客土喷播草种现场检查记录表数据";
 	};
 
 	/** 修改按钮操作 */
@@ -510,7 +538,7 @@
 		getSj10(id).then(response => {
 			form.value = response.data;
 			open.value = true;
-			title.value = "修改Sj10数据";
+			title.value = "修改三维网客土喷播草种现场检查记录表数据";
 		});
 	};
 
