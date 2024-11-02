@@ -193,4 +193,11 @@ const router = createRouter({
   },
 });
 
+// 添加全局后置守卫
+router.afterEach((to, from) => {
+  if (from.path === '/detail' && to.path !== '/detail') {
+    // 从详情页返回到其他页面时刷新页面
+    window.location.reload();
+  }
+});
 export default router;
