@@ -6,6 +6,9 @@ import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 import locale from 'element-plus/es/locale/lang/zh-cn'
 
+//下载表格1班
+import '@/utils/table2excel';
+
 import '@/assets/styles/index.scss' // global css
 
 import App from './App'
