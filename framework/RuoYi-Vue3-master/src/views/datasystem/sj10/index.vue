@@ -37,10 +37,6 @@
 							v-hasPermi="['system:user:export']">导出</el-button>
 					</el-col>
 
-					<el-col :span="1.5">
-						<el-button type="primary" plain icon="Edit" @click="Detail"
-							v-hasPermi="['Details']">查看详情</el-button>
-					</el-col>
 					
 					<right-toolbar v-model:showSearch="showSearch" @queryTable="getList"
 						:columns="columns"></right-toolbar>
@@ -480,8 +476,7 @@
 	};
 
 	const Detail = (row) => {
-		console.log(row)
-		console.log(row.id)
+		console.log("debug"+row.id)
 		router.push({
 			path: "/detail",
 			query: {

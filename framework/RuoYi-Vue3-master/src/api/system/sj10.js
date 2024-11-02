@@ -3,7 +3,7 @@ import { parseStrEmpty } from "@/utils/ruoyi";
 
 
 // //显示表格
-// export function getSJ10(id){
+// export function getSj10(id){
 // 	return request({
 // 		url:'getDetail'  ,
 // 		method:'post',
