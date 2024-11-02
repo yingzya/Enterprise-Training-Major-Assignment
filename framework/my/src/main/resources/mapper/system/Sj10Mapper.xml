@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.Sj10Mapper">
+
+	<resultMap type="Sj10" id="Sj10Result">
+		<id     property="id"       column="id"      />
+		<result property="sgdw"       column="sgdw"      />
+		<result property="hth"     column="hth"    />
+		<result property="jldw"     column="jldw"    />
+		<result property="bh"        column="bh"        />
+		<result property="gcmc"        column="gcmc"        />
+		<result property="sgsj"        column="sgsj"        />
+		<result property="gcbw"        column="gcbw"        />
+		<result property="wdcdsjz"        column="wdcdsjz"        />
+		<result property="wdcdjyjg"        column="wdcdjyjg"        />
+		<result property="wdkdsjz"        column="wdkdsjz"        />
+		<result property="wdkdjyjg"        column="wdkdjyjg"        />
+		<result property="psbthd"        column="psbthd"        />
+		<result property="psbthdjyjg"        column="psbthdjyjg"        />
+		<result property="psbtph"        column="psbtph"        />
+		<result property="czpzl"        column="czpzl"        />
+		<result property="cchl"        column="cchl"        />
+		<result property="cg"        column="cg"        />
+		<result property="whxtjcd"        column="whxtjcd"        />
+		<result property="wzxdjcd"        column="wzxdjcd"        />
+		<result property="uhjxd"        column="uhjxd"        />
+		<result property="wgjc"        column="wgjc"        />
+	</resultMap>
+
+	<select id="selectSj10List" parameterType="Sj10" resultMap="Sj10Result">
+		select * from sj10
+		where 1 = 1
+		<if test="sgdw != null and sgdw != ''">
+			AND sgdw = #{sgdw}
+		</if>
+		<if test="hth != null and hth != ''">
+			AND hth = #{hth}
+		</if>
+		<if test="jldw != null and jldw != ''">
+			AND jldw = #{jldw}
+		</if>
+		<if test="bh != null and bh != ''">
+			AND bh = #{bh}
+		</if>
+		<if test="gcmc != null and gcmc != ''">
+			AND gcmc = #{gcmc}
+		</if>
+		<if test="sgsj != null">
+			AND sgsj = #{sgsj}
+		</if>
+		<if test="gcbw != null and gcbw != ''">
+			AND gcbw = #{gcbw}
+		</if>
+		<if test="wdcdsjz != null and wdcdsjz != 0">
+			AND wdcdsjz = #{wdcdsjz}
+		</if>
+		<if test="wdcdjyjg != null">
+			AND wdcdjyjg = #{wdcdjyjg}
+		</if>
+		<if test="wdkdsjz != null and wdkdsjz != 0">
+			AND wdkdsjz = #{wdkdsjz}
+		</if>
+		<if test="wdkdjyjg != null">
+			AND wdkdjyjg = #{wdkdjyjg}
+		</if>
+		<if test="psbthd != null and psbthd != 0">
+			AND psbthd = #{psbthd}
+		</if>
+		<if test="psbthdjyjg != null">
+			AND psbthdjyjg = #{psbthdjyjg}
+		</if>
+		<if test="psbtph != null">
+			AND psbtph = #{psbtph}
+		</if>
+		<if test="czpzl != null">
+			AND czpzl = #{czpzl}
+		</if>
+		<if test="cchl != null">
+			AND cchl = #{cchl}
+		</if>
+		<if test="cg != null">
+			AND cg = #{cg}
+		</if>
+		<if test="whxtjcd != null">
+			AND whxtjcd = #{whxtjcd}
+		</if>
+		<if test="wzxdjcd != null">
+			AND wzxdjcd = #{wzxdjcd}
+		</if>
+		<if test="uhjxd != null">
+			AND uhjxd = #{uhjxd}
+		</if>
+		<if test="wgjc != null">
+			AND wgjc = #{wgjc}
+		</if>
+		<!-- 数据范围过滤 -->
+		${params.dataScope}
+	</select>
+
+
+	<select id="selectSj10ById" parameterType="Long" resultMap="Sj10Result">
+		select * from sj10 where id = #{id}
+	</select>
+
+	<insert id="insertSj10" parameterType="Sj10" useGeneratedKeys="true" keyProperty="id">
+		insert into sj10(
+		<if test="sgdw != null and sgdw != ''">sgdw,</if>
+		<if test="hth != null and hth != ''">hth,</if>
+		<if test="jldw != null and jldw != ''">jldw,</if>
+		<if test="bh != null and bh != ''">bh,</if>
+		<if test="gcmc != null and gcmc != ''">gcmc,</if>
+		<if test="sgsj != null">sgsj,</if>
+		<if test="gcbw != null and gcbw != ''">gcbw,</if>
+		<if test="wdcdsjz != null">wdcdsjz,</if>
+		<if test="wdcdjyjg != null">wdcdjyjg,</if>
+		<if test="wdkdsjz != null">wdkdsjz,</if>
+		<if test="wdkdjyjg != null">wdkdjyjg,</if>
+		<if test="psbthd != null">psbthd,</if>
+		<if test="psbthdjyjg != null">psbthdjyjg,</if>
+		<if test="psbtph != null">psbtph,</if>
+		<if test="czpzl != null">czpzl,</if>
+		<if test="cchl != null">cchl,</if>
+		<if test="cg != null">cg,</if>
+		<if test="whxtjcd != null">whxtjcd,</if>
+		<if test="wzxdjcd != null">wzxdjcd,</if>
+		<if test="uhjxd != null">uhjxd,</if>
+		<if test="wgjc != null">wgjc,</if>
+		id
+		) values (
+		<if test="sgdw != null and sgdw != ''">#{sgdw},</if>
+		<if test="hth != null and hth != ''">#{hth},</if>
+		<if test="jldw != null and jldw != ''">#{jldw},</if>
+		<if test="bh != null and bh != ''">#{bh},</if>
+		<if test="gcmc != null and gcmc != ''">#{gcmc},</if>
+		<if test="sgsj != null">#{sgsj},</if>
+		<if test="gcbw != null and gcbw != ''">#{gcbw},</if>
+		<if test="wdcdsjz != null">#{wdcdsjz},</if>
+		<if test="wdcdjyjg != null">#{wdcdjyjg},</if>
+		<if test="wdkdsjz != null">#{wdkdsjz},</if>
+		<if test="wdkdjyjg != null">#{wdkdjyjg},</if>
+		<if test="psbthd != null">#{psbthd},</if>
+		<if test="psbthdjyjg != null">#{psbthdjyjg},</if>
+		<if test="psbtph != null">#{psbtph},</if>
+		<if test="czpzl != null">#{czpzl},</if>
+		<if test="cchl != null">#{cchl},</if>
+		<if test="cg != null">#{cg},</if>
+		<if test="whxtjcd != null">#{whxtjcd},</if>
+		<if test="wzxdjcd != null">#{wzxdjcd},</if>
+		<if test="uhjxd != null">#{uhjxd},</if>
+		<if test="wgjc != null">#{wgjc},</if>
+		null
+		)
+	</insert>
+
+	<update id="updateSj10" parameterType="Sj10">
+		update sj10
+		<set>
+			<if test="sgdw != null and sgdw != ''">
+				sgdw = #{sgdw},
+			</if>
+			<if test="hth != null and hth != ''">
+				hth = #{hth},
+			</if>
+			<if test="jldw != null and jldw != ''">
+				jldw = #{jldw},
+			</if>
+			<if test="bh != null and bh != ''">
+				bh = #{bh},
+			</if>
+			<if test="gcmc != null and gcmc != ''">
+				gcmc = #{gcmc},
+			</if>
+			<if test="sgsj != null">
+				sgsj = #{sgsj},
+			</if>
+			<if test="gcbw != null and gcbw != ''">
+				gcbw = #{gcbw},
+			</if>
+			<if test="wdcdsjz != null">
+				wdcdsjz = #{wdcdsjz},
+			</if>
+			<if test="wdcdjyjg != null">
+				wdcdjyjg = #{wdcdjyjg},
+			</if>
+			<if test="wdkdsjz != null">
+				wdkdsjz = #{wdkdsjz},
+			</if>
+			<if test="wdkdjyjg != null">
+				wdkdjyjg = #{wdkdjyjg},
+			</if>
+			<if test="psbthd != null">
+				psbthd = #{psbthd},
+			</if>
+			<if test="psbthdjyjg != null">
+				psbthdjyjg = #{psbthdjyjg},
+			</if>
+			<if test="psbtph != null">
+				psbtph = #{psbtph},
+			</if>
+			<if test="czpzl != null">
+				czpzl = #{czpzl},
+			</if>
+			<if test="cchl != null">
+				cchl = #{cchl},
+			</if>
+			<if test="cg != null">
+				cg = #{cg},
+			</if>
+			<if test="whxtjcd != null">
+				whxtjcd = #{whxtjcd},
+			</if>
+			<if test="wzxdjcd != null">
+				wzxdjcd = #{wzxdjcd},
+			</if>
+			<if test="uhjxd != null">
+				uhjxd = #{uhjxd},
+			</if>
+			<if test="wgjc != null">
+				wgjc = #{wgjc},
+			</if>
+		</set>
+		where id = #{id}
+	</update>
+
+	<delete id="deleteSj10ById" parameterType="Long">
+		delete from sj10 where id = #{id}
+	</delete>
+
+	<delete id="deleteSj10ByIds" parameterType="Long">
+		delete from sj10 where id in
+		<foreach collection="array" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper>

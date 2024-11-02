@@ -14,20 +14,11 @@ public class Turang extends BaseEntity{
     private String wendu;// 温度
     private String shidu;// 湿度
 
-    //@JsonFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createdate;// 创建日期
 
     // 设置getter 和setter 方法
 
-
-    public Date getCreatedate() {
-        return createdate;
-    }
-
-    public void setCreatedate(Date createdate) {
-        this.createdate = createdate;
-    }
 
     public int getId() {
         return id;
@@ -61,5 +52,11 @@ public class Turang extends BaseEntity{
         this.shidu = shidu;
     }
 
+    public Date getCreatedate() {
+        return createdate;
+    }
 
+    public void setCreatedate(Date createdate) {
+        this.createdate = createdate;
+    }
 }
