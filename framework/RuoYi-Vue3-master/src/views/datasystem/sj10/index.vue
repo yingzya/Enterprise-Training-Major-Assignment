@@ -42,10 +42,6 @@
 						:columns="columns"></right-toolbar>
 				</el-row>
 
-				<!-- <el-form-item>
-					<el-button type="primary" icon="Edit" @click="handleUpdate(scope.row)" >查看详情</el-button>
-				</el-form-item> -->
-
 				<el-table v-loading="loading" :data="userList" @selection-change="handleSelectionChange">
 					<el-table-column type="selection" width="50" align="center" />
 					<el-table-column label="施工单位" align="center" key="sgdw" prop="sgdw" />
@@ -73,6 +69,12 @@
 
 					<el-table-column label="操作" align="center" width="150" class-name="small-padding fixed-width">
 						<template #default="scope">
+							
+							<el-tooltip content="下载" placement="top">
+								<el-button link type="primary" icon="Download" @click="genExcel()"
+									v-hasPermi="['Details']"></el-button>
+							</el-tooltip>
+							
 							<el-tooltip content="修改" placement="top">
 								<el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)"
 									v-hasPermi="['system:user:edit']"></el-button>
@@ -277,6 +279,7 @@
 	import {
 		getToken
 	} from "@/utils/auth";
+	import $ from 'jquery';
 	import {
 		getSj10s,
 		getSj10,
@@ -437,7 +440,15 @@
 		}, `user_${new Date().getTime()}.xlsx`);
 	};
 
-
+	// function genExcel(){
+	// 	$('#sj10Table').table2excel({
+	// 		name:"sj10表格",
+	// 		filename:"sj10表格",
+	// 		exclude_img:true,
+	// 		exclude_links:true,
+	// 		exclude_inputs:true
+	// 	});
+	// };
 	/** 更多操作 */
 	function handleCommand(command, row) {
 		switch (command) {

@@ -330,6 +330,7 @@
 </template>
 
 <script setup name="User">
+import $ from 'jquery';
 import { getToken } from "@/utils/auth";
 import { changeUserStatus, listUser, resetUserPwd, delUser, getUser, updateUser, addUser, deptTreeSelect } from "@/api/system/user";
 
