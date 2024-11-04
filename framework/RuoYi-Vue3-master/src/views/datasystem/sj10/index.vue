@@ -239,6 +239,18 @@
 						</el-form-item>
 					</el-col>
 				</el-row>
+				<el-row>
+					<el-col :span="24">
+						<el-form-item label="最后操作时间" prop="time">
+							<el-date-picker
+							   v-model="form.time"
+							   value-format="YYYY-MM-DD HH:mm:ss"
+							   type="datetime"
+							   style="width: 100%;"
+							></el-date-picker>
+						</el-form-item>
+					</el-col>
+				</el-row>
 			</el-form>
 			<template #footer>
 				<div class="dialog-footer">
