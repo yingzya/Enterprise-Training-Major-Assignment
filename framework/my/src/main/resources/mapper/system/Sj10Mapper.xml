@@ -27,6 +27,7 @@
 		<result property="wzxdjcd"        column="wzxdjcd"        />
 		<result property="uhjxd"        column="uhjxd"        />
 		<result property="wgjc"        column="wgjc"        />
+		<result property="time"        column="time"        />
 	</resultMap>
 
 	<select id="selectSj10List" parameterType="Sj10" resultMap="Sj10Result">
@@ -127,6 +128,7 @@
 		<if test="wzxdjcd != null">wzxdjcd,</if>
 		<if test="uhjxd != null">uhjxd,</if>
 		<if test="wgjc != null">wgjc,</if>
+		<if test="time != null">time,</if>
 		id
 		) values (
 		<if test="sgdw != null and sgdw != ''">#{sgdw},</if>
@@ -150,6 +152,7 @@
 		<if test="wzxdjcd != null">#{wzxdjcd},</if>
 		<if test="uhjxd != null">#{uhjxd},</if>
 		<if test="wgjc != null">#{wgjc},</if>
+		<if test="time != null">#{time},</if>
 		null
 		)
 	</insert>
@@ -174,6 +177,9 @@
 			</if>
 			<if test="sgsj != null">
 				sgsj = #{sgsj},
+			</if>
+			<if test="time != null">
+				time = #{time},
 			</if>
 			<if test="gcbw != null and gcbw != ''">
 				gcbw = #{gcbw},
@@ -219,6 +225,9 @@
 			</if>
 			<if test="wgjc != null">
 				wgjc = #{wgjc},
+			</if>
+			<if test="time != null">
+				time = #{time},
 			</if>
 		</set>
 		where id = #{id}

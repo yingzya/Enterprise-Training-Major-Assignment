@@ -44,6 +44,7 @@
 
 				<el-table v-loading="loading" :data="userList" @selection-change="handleSelectionChange">
 					<el-table-column type="selection" width="50" align="center" />
+					<el-table-column label="最后操作时间" align="center" key="time" prop="time" />
 					<el-table-column label="施工单位" align="center" key="sgdw" prop="sgdw" />
 					<el-table-column label="合同号" align="center" key="hth" prop="hth" />
 					<el-table-column label="监理单位" align="center" key="jldw" prop="jldw" />

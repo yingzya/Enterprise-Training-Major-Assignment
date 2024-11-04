@@ -56,6 +56,7 @@ public class Sj10ServiceImpl implements Sj10Service {
     @Override
     @Transactional
     public int insertSj10(Sj10 sj10){
+        sj10.setTime();
         // 新增土壤数据信息
         int rows = sj10Mapper.insertSj10(sj10);
         return rows;

@@ -63,27 +63,63 @@ public class ExcelController {
         Cell row1_cell0 = row1.createCell(0);// 创建一个单元格
         row1_cell0.setCellValue("sj10");// 设置单元格内容
 
-        //sheet.addMergedRegion(new CellRangeAddress(0,0,0,6));// 合并单元格
-        //空的第二行
-        Row emptyRow = sheet.createRow(1); // 创建第二行（索引为1）
-        // 第3行
-        Row row3 = sheet.createRow(1);
-        Cell row3_cell2 = row3.createCell(0);
-        row3_cell2.setCellValue("三维网客土喷播草种现场检查记录表");
-        //row3.setHeightInPoints(50);// 行高
-        sheet.addMergedRegion(new CellRangeAddress(1,1,0,6));
-        row3_cell2.setCellStyle(fontStyle1);// 设置单元格样式
-        row3_cell2.setCellStyle(fontStyleCenter);
+        sheet.addMergedRegion(new CellRangeAddress(0,0,0,6));// 合并单元格
 
-        // 第4行
-        Row row4 = sheet.createRow(1);
-        Cell row4_cell0 = row4.createCell(0);
-        Cell row4_cell1 = row4.createCell(0);
-        sheet.addMergedRegion(new CellRangeAddress(1,1,0,1));
-        row4_cell0.setCellValue("施工单位");
-        row4_cell1.setCellStyle(fontStyle1);// 设置单元格样式
-        row4_cell1.setCellStyle(fontStyleCenter);
-        
+        // 第二行
+        Row row2 = sheet.createRow(1);
+        Cell row2_cell2 = row2.createCell(0);
+        row2_cell2.setCellValue("三维网客土喷播草种现场检查记录表");
+        //row2.setHeightInPoints(50);// 行高
+        sheet.addMergedRegion(new CellRangeAddress(1,1,0,6));
+        row2_cell2.setCellStyle(fontStyle1);// 设置单元格样式
+        row2_cell2.setCellStyle(fontStyleCenter);
+
+        // 第三行
+        Row row3 = sheet.createRow(2);
+        Cell row3_cell0  = row3.createCell(0);
+        row3_cell0.setCellValue("施工单位：");
+        sheet.addMergedRegion(new CellRangeAddress(2,2,0,1));
+        row3_cell0.setCellStyle(borderStyle);// 单元格设置样式
+        row3_cell0.setCellStyle(fontStyle1);
+
+        Cell row3_cell3 = row3.createCell(3);
+        row3_cell3.setCellValue("string");
+        sheet.addMergedRegion(new CellRangeAddress(2,2,3,6));
+        row3_cell3.setCellStyle(style2);
+        //row3_cell3.setCellStyle(borderStyle);
+
+        Cell row3_cell12 = row3.createCell(4);
+        row3_cell12.setCellValue("合同号");
+        sheet.addMergedRegion(new CellRangeAddress(2,2,12,13));
+        row3_cell12.setCellStyle(fontStyle1);
+
+        Cell row3_cell14 =  row3.createCell(14);
+        row3_cell14.setCellValue("string");
+        sheet.addMergedRegion(new CellRangeAddress(2,2,14,17));
+        row3_cell14.setCellStyle(style3);
+
+
+        // 第三行
+        Row row4 = sheet.createRow(3);
+        Cell row4_cell0  = row4.createCell(0);
+        row4_cell0.setCellValue("工程名称：");
+        sheet.addMergedRegion(new CellRangeAddress(3,3,0,2));
+        row4_cell0.setCellStyle(borderStyle);// 单元格设置样式
+
+        Cell row4_cell3  = row4.createCell(3);// 创建列 单元格
+        row4_cell3.setCellValue("8888888");
+        sheet.addMergedRegion(new CellRangeAddress(3,3,3,8));
+        row4_cell3.setCellStyle(borderStyle);// 单元格设置样式
+
+        Cell row4_cell9  = row4.createCell(9);// 创建列 单元格
+        row4_cell9.setCellValue("合同段：");
+        sheet.addMergedRegion(new CellRangeAddress(3,3,9,11));
+        row4_cell9.setCellStyle(borderStyle);// 单元格设置样式
+
+        Cell row4_cell12  = row4.createCell(12);// 创建列 单元格
+        row4_cell12.setCellValue("23749273942934792");
+        sheet.addMergedRegion(new CellRangeAddress(3,3,12,17));
+        row4_cell12.setCellStyle(borderStyle);// 单元格设置样式
 //        // 创建表头
 //        Row headerRow = sheet.createRow(0);
 //        headerRow.setHeightInPoints(20);// 行高

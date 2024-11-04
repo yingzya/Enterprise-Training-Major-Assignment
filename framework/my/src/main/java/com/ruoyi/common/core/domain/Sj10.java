@@ -12,6 +12,11 @@ public class Sj10 extends BaseEntity{
     private String jldw;//监理单位
     private String bh;//编号
     private String gcmc;//工程名称
+
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date time;//施工时间
+
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date sgsj;//施工时间
     private String gcbw;//工程部位
@@ -202,5 +207,13 @@ public class Sj10 extends BaseEntity{
 
     public void setWgjc(String wgjc) {
         this.wgjc = wgjc;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime() {
+        this.time = new Date();
     }
 }
