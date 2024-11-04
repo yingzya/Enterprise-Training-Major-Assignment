@@ -21,10 +21,19 @@
 			    <uni-easyinput type="text" v-model="sj10Data.gcmc" 
 			    placeholder="请输入工程名称" />
 			</uni-forms-item>
-			<uni-forms-item label="施工时间" name="sgsj">
+			<!-- <uni-forms-item label="施工时间" name="sgsj">
 			    <uni-easyinput type="date" v-model="sj10Data.sgsj" 
 			    placeholder="请选择施工时间" />
+			</uni-forms-item> -->
+			
+			<uni-forms-item label="施工日期" name="sgsj">
+				<uni-datetime-picker
+								type="sgsj"
+								v-model="sj10Data.sgsj"
+								@change="changeLog"
+							/>
 			</uni-forms-item>
+			
 			<uni-forms-item label="工程部位" name="gcbw">
 			    <uni-easyinput type="text" v-model="sj10Data.gcbw" 
 			    placeholder="请输入工程部位" />
