@@ -226,8 +226,8 @@
 			<td width="135" style='width:81;'></td>
 			<td width="159" style='width:95;'></td>
 		</tr>
-		<td>操作日期:</td>
-		<td>{{form.time}}</td>
+		<!-- <td>操作日期:</td>
+		<td>{{form.time}}</td> -->
 	</table>
 		
 		 <el-button type="primary" @click="genExcel()">生成excel</el-button>
