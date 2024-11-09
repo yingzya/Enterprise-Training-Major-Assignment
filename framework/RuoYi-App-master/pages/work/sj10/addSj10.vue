@@ -114,17 +114,6 @@
 <script>
 	import { addSj10 } from '@/api/system/sj10';
 	export default {
-		// data() {
-		// 	return {
-		// 		sj10Data: {
-		// 			name: '',
-		// 			wendu: '',
-		// 			shidu: '',
-		// 			createdate: ''
-		// 		},
-		// 		rules: {}
-		// 	}
-		// },
 		data() {
 		    return {
 		        sj10Data: {

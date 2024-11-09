@@ -102,6 +102,11 @@
 			"style": {
 				"navigationBarTitleText": "添加Sj10数据"
 			}
+		}, {
+			"path": "pages/work/sj10/item",
+			"style": {
+				"navigationBarTitleText": "查看Sj10表"
+			}
 		}
 	],
 	"tabBar": {

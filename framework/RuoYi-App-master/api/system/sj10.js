@@ -1,5 +1,7 @@
 import upload from '@/utils/upload'
 import request from '@/utils/request'
+import { func } from 'prop-types'
+import PropTypes from 'prop-types';
 
 // 列表查询
 export function getSj10s(pageNum, pageSize) {
@@ -21,4 +23,13 @@ export function addSj10(data) {
     method: 'post',
 	data: data
   })
+}
+
+//查看详情用
+export function getSJ10(id)
+{
+	return request({
+		url:'/getSj10/'+ id,
+		method:'get',
+	})
 }

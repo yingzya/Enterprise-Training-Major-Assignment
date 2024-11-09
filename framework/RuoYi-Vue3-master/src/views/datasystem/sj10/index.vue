@@ -71,10 +71,10 @@
 					<el-table-column label="操作" align="center" width="150" class-name="small-padding fixed-width">
 						<template #default="scope">
 							
-							<el-tooltip content="下载" placement="top">
+							<!-- <el-tooltip content="下载" placement="top">
 								<el-button link type="primary" icon="Download" @click="genExcel()"
 									v-hasPermi="['Details']"></el-button>
-							</el-tooltip>
+							</el-tooltip> -->
 							
 							<el-tooltip content="修改" placement="top">
 								<el-button link type="primary" icon="Edit" @click="handleUpdate(scope.row)"
