@@ -23,7 +23,7 @@
 			</view>
 			<view
 				style="width: 25%;display: flex; flex-direction: column; justify-content: flex-end;margin-left: 40px;margin-bottom: 30rpx;margin-right: 15rpx;">
-				<button type="primary" size="40px" @click="see(item.id)">查看详情</button>
+				<button type="primary" size="mini" @click="see(item.id)">查看详情</button>
 			</view>
 		</view>
 		
